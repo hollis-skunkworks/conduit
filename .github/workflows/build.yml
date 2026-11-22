@@ -31,7 +31,7 @@ jobs:
       - name: Public history hygiene
         run: |
           git init "$RUNNER_TEMP/hygiene"
-          git -C "$RUNNER_TEMP/hygiene" fetch --depth=1 https://github.com/hollis-labs/tools.git __SHARED_TOOLS_SHA__
+          git -C "$RUNNER_TEMP/hygiene" fetch --depth=1 https://github.com/hollis-labs/tools.git ff31a569e895710bafd91666300be1054ea68449
           git -C "$RUNNER_TEMP/hygiene" checkout --detach FETCH_HEAD
           python3 "$RUNNER_TEMP/hygiene/scripts/scan-public" --repo "$GITHUB_WORKSPACE" --ref HEAD
       - name: Vet
@@ -56,7 +56,7 @@ jobs:
         run: go run golang.org/x/vuln/cmd/govulncheck@v1.8.0 ./...
   artifact:
     needs: check
-    uses: hollis-labs/tools/.github/workflows/go-app-build.yml@__SHARED_TOOLS_SHA__
+    uses: hollis-labs/tools/.github/workflows/go-app-build.yml@ff31a569e895710bafd91666300be1054ea68449
     with:
       app: conduit
       main_pkg: ./cmd/conduit
