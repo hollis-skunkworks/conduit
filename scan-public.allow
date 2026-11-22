@@ -1,0 +1,6 @@
+internal-ip internal/api/api_test.go Synthetic private address verifies refusal to bind outside loopback
+home-path-linux internal/fuzzy/fuzzy_test.go Generic fixture path used only as fuzzy-matching benchmark text
+aws-access-key internal/cmdrun/cmdrun_test.go Historical redaction fixture built from an alphabet sequence rather than an issued credential
+aws-access-token internal/cmdrun/cmdrun_test.go Historical redaction fixture built from an alphabet sequence rather than an issued credential
+credentials-in-url internal/redact/text_test.go Historical redaction fixture uses an example-domain URL and dummy password
+agent-box-host deploy.yaml the fleet-deploy/v1 inventory label naming the deploy target (a name in the fleet tool's own inventory, not an address, port or credential)

@@ -9,6 +9,8 @@ section before running the repository release script. No releases are tagged yet
 
 ## Unreleased
 
+- Relocate source with history to hollis-skunkworks/conduit, retain independent CI/artifact builds, and defer module identity and live deployment adoption.
+
 The live instance was cut over to this build on 2026-11-13 (`docs/cutover-plan.md`, section 14).
 
 ### Changed

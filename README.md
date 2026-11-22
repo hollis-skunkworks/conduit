@@ -10,21 +10,16 @@ policy decision, a recorded outcome and output you can recall later.
 
 ## Install
 
-Requires Go 1.26.11 or later. Install the current development version:
+Requires Go 1.26.11 or later on Linux. Build the current source:
 
 ```sh
-go install github.com/hollis-labs/tools/conduit/cmd/conduit@latest
-```
-
-Add your Go binary directory (`$(go env GOPATH)/bin` by default) to `PATH`.
-To build from a checkout:
-
-```sh
-git clone https://github.com/hollis-labs/tools.git
-cd tools/conduit
+git clone https://github.com/hollis-skunkworks/conduit.git
+cd conduit
 GOWORK=off go build -o bin/conduit ./cmd/conduit
 ./bin/conduit paths
 ```
+
+Conduit is experimental and now has its own repository. Its Go module identity remains `github.com/hollis-labs/tools/conduit` until the portfolio reorganization's adoption pass. Historical module versions remain in tools; new module publishing waits for that path adoption. Running services and their data are not changed by this source move.
 
 ## Quick start
 
@@ -119,7 +114,7 @@ Output goes to caster (`cas://sha256/...`) when `caster` is on PATH, else a loca
 
 ## Development
 
-Run these from `tools/conduit` with `GOWORK=off`:
+Run these from the repository root with `GOWORK=off`:
 
 ```sh
 go mod tidy -diff
@@ -129,7 +124,7 @@ golangci-lint run ./...
 golangci-lint run --config .golangci.transport.yml ./...
 ```
 
-The [monorepo CI](../.github/workflows/tool-checks.yml) runs the full gate.
+The [CI workflow](.github/workflows/build.yml) runs the full gate.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for invariants and their tests,
 [CHANGELOG.md](CHANGELOG.md) for changes, and [SECURITY.md](SECURITY.md)
 for the security model.
@@ -149,4 +144,4 @@ for the security model.
 
 ## License
 
-MIT License — see the repository [LICENSE](../LICENSE). © 2026 Chrispian Burks / Hollis Labs.
+MIT License — see the repository [LICENSE](LICENSE). © 2026 Chrispian Burks / Hollis Labs.

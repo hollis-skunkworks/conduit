@@ -10,7 +10,7 @@ Governed command runtime: every command is an object with identity, policy, reco
 - `internal/cmdparse` — shell command string to segments, wrappers, effect classes. `internal/policy` — Deny > Ask > Allow over parsed segments. `internal/cmdrun` — exec wrapper, env scrub, redaction, error classes. `internal/blob` — output store (caster CLI, local fallback). `internal/service/run.go` — the phases in order.
 - `internal/service/run.go` — Submit (record + decide) / Approve / Execute (claims atomically) / Start (async) / Cancel. `internal/runbook` — named operations. `internal/api` (HTTP), `internal/mcp` (stdio), `internal/cli` (+ `picker.go`, `shell/*.sh` embedded by `conduit init`) are the transports. `internal/fuzzy` — the history matcher.
 - Policy file: `<config dir>/policy.yaml` (`conduit paths`); a missing file is the baseline, a malformed one is an error.
-- `../.github/workflows/tool-checks.yml` — the full CI gate.
+- `.github/workflows/build.yml` — the full CI gate.
 
 ## Commands
 
@@ -22,7 +22,7 @@ go vet ./...
 go test -race -count=1 ./...
 ```
 
-CI (`../.github/workflows/tool-checks.yml`) is the full gate.
+CI (`.github/workflows/build.yml`) is the full gate.
 
 ## Boundaries
 

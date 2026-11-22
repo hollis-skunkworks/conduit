@@ -18,7 +18,7 @@
 # put the old command back; the drop-in below resets ExecStart and so wins over it.
 schema: fleet-deploy/v1
 app: conduit
-repo: hollis-labs/tools
+repo: hollis-skunkworks/conduit
 artifact: {name: "conduit-{sha12}", tarball: "conduit_{version}_{os}_{arch}.tar.gz", sums: SHA256SUMS}
 targets:
   - id: agent-os-conduit
