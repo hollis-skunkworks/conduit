@@ -56,7 +56,7 @@ jobs:
         run: go run golang.org/x/vuln/cmd/govulncheck@v1.8.0 ./...
   artifact:
     needs: check
-    uses: hollis-labs/tools/.github/workflows/go-app-build.yml@ff31a569e895710bafd91666300be1054ea68449
+    uses: hollis-labs/substrate/.github/workflows/go-app-build.yml@f516516ec6d1767daab29bc162781f294c2bc981
     with:
       app: conduit
       main_pkg: ./cmd/conduit
